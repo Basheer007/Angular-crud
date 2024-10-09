@@ -1,0 +1,25 @@
+<div class="bg-slate-500 min-h-dvh">
+  <div class="flex gap-2">
+    <div class="bg-green-500 border w-max px-24 flex justify-center items-center">
+      <input type="text" class="border-2 border-black  px-2 py-1" [(ngModel)]="inputValue">
+      <button class="bg-orange-300 px-2 py-1" (click)="addData()">add</button>
+    </div>
+    <div class="bg-yellow-500 border w-max px-24 ">
+      <label for="update">
+        update value here!
+        <input type="text" class="border-2  border-black px-2 py-1" [(ngModel)]="updateValue">
+      </label>
+    </div>
+  </div>
+
+
+  <ul class="flex flex-col gap-2">
+    <li class="bg-green-700 font-bold flex gap-2 items-center " *ngFor="let item of myList;let i = index">{{item}}
+      <div class="flex gap-2">
+        <button (click)="updateItem(i, updateValue)" class="bg-yellow-300 px-2 py-1">Edit</button>
+        <button (click)="deleteItem(i)" class="bg-red-700 px-2 py-1">Delete</button>
+      </div>
+    </li>
+
+  </ul>
+</div>
